@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .azul {
+            background-color: blue;
+        }
+
+        .verde {
+            background-color: green;
+        }
+
+        .rojo {
+            background-color: red;
+        }
+
+
+    </style>
+</head>
+<body id="body">
+    <button id="azul" onclick="cambiarColor(body, 'azul')">Soy el botón azul</button>
+    <button id="verde" onclick="cambiarColor(body, 'verde')">Yo soy el verde</button>
+    <button id="rojo" onclick="cambiarColor(body, 'rojo')">El rojo soy yo!</button>
+    <button id="sucio" onclick="quitarClases()">Restablecer</button>
+    <!--donde body es el elemento que se va a cambiar de color, si pongo this al estar dentro del boton sería el boton el que cambiaria -->
+
+    <script >
+    function cambiarColor(elemento, color){
+    //alternar la clase del color corresponiendite
+    elemento.classList.toggle(color);
+    }
+
+    function quitarClases(){
+      var body = document.getElementById("body");
+      body.className = ""; // Eliminar todas 
+
+
+    }
+    
+    </script>
+</body>
+</html>

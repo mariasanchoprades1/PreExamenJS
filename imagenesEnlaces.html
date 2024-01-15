@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="imagenes">
+    <img src="images.jpeg" alt="calamardo">
+    <img src="images.jpeg" alt="calamardo">
+    <img src="images.jpeg" alt="calamardo">
+
+
+</div>
+
+<div id =enlaces>
+    <a href="#"></a>
+    <a href="#"></a>
+    <a href="#"></a>
+</div >
+
+<div id = "botones">
+    <button onclick="contarimagenes()">contar imagenes</button>
+    <button onclick="contarenlaces()">contar enlaces</button>
+
+</div>
+
+
+<script>
+function contarimagenes(){
+    var imagenes = document.getElementsByTagName("img");
+    alert("Hay " + imagenes.length + " imágnes! ");
+
+}
+function contarenlaces(){
+    var enlaces = document.getElementsByTagName("a");
+    alert("Hay " + enlaces.length + " ienlaces! ");
+
+}
+
+</script>
+</body>
+</html>

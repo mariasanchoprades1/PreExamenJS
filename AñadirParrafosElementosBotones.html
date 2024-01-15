@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id = "contenedor">
+    <p>Este es mi priemr parrafo</p>
+
+</div>
+
+<button onclick="anyadirParrafo()">Añadir parrafo</button>
+    <!--IGUAL QUE AÑAFIR PERO LO INSERTA ARRIBA-->
+<button onclick="insertarParrafo()">Insterar parrafo</button>
+<button onclick="reemplazarParrafo()">Reemplazar parrafo</button>
+<button onclick="borrarParrafo()">Borrar parrafo</button>
+<button onclick="clonarDiv()">clonar div</button>
+
+<script>
+function anyadirParrafo(){
+    //CREO EL ELEMENTO
+var p = document.createElement("p");
+    //AÑADO CONTENIDO
+p.textContent="Parrafo añadido";
+    //VOY AL CONTENEDOR y añado el parrafo
+document.getElementById("contenedor").appendChild(p);
+}
+
+function insertarParrafo(){
+var p = document.createElement("p");
+p.textContent="Parrafo insertado";
+var contenedor = document.getElementById("contenedor");
+contenedor.insertBefore(p, contenedor.children[1]);
+
+}
+
+function reemplazarParrafo(){
+var contenedor = document.getElementById("contenedor");
+    if (contenedor.children[1]){
+        contenedor.children[1].textContent = "Párrafo reemplazado";
+        }
+    }
+
+    function borrarParrafo(){
+        var contenedor = document.getElementById("contenedor");
+        if (contenedor.children[1]){
+            contenedor.removeChild(contenedor.children[1]);
+        }
+    }
+
+    function clonarDiv(){
+        var contenedor = document.getElementById("contenedor");
+        var clon = contenedor.cloneNode(true);
+        document.body.appendChild(clon);
+    }
+
+
+</script>
+
+</body>
+</html>

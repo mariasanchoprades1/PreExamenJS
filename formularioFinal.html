@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 1</title>
+    <script type="text/javascript" src="Ejercicio1.js"></script>
+</head>
+
+<body>
+    <h3> FORMULARIO </h3>
+    <noscript>
+        <p>JavaScrip esta desactivado, activalo de nuevo</p>
+    </noscript>
+
+    <form action="" id="formulario">
+        <label for="nom">Nombre</label>
+        <input type="text" name="nom" id="nom"><br>
+        <label for="apellidos">Apellidos</label>
+        <input type="text" name="apellidos" id="apellidos"><br>
+        <label for="tlf">Telefono</label>
+        <input type="text" name="tlf" id="tlf"><br>
+        <label for="dni">Dni</label>
+        <input type="text" name="dni" id="dni"><br>
+        <label for="edad">Edad</label>
+        <input type="text" name="edad" id="edad"><br>
+        <label for="sexo">Sexo:</label><br>
+        <input type="radio" name="sexo" value="hombre">Hombre <br>
+        <input type="radio" name="sexo" value="mujer">Mujer <br>
+        <label for="foto">Incluir foto:</label>
+        <input type="file" name="foto" id="foto"><br>
+        <input type="checkbox" name="check" id="check">
+        <label for="check">Enviar publicidad</label><br>
+        <label for="lista">Elige tu aficion favorita:</label>
+        <select id="opciones" name="opciones">
+                <option value="musica">Musica</option>
+                <option value="lectura">Lectura</option>
+                <option value="deporte">Deporte</option>
+        </select>
+        <br>
+        <label for="obs">Observaciones:</label><br>
+        <textarea name="obs" id="obs" cols="30" rows="10"></textarea><br>
+        <input type="submit" value="Guardar cambios">
+        <input type="reset" value="Borrar los datos introducidos">
+    </form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href=""> </a>
+    <a href=""></a>
+    <a href=""></a>
+    <a href=""></a>
+    <a href="https://google.com">GOOGLE</a>
+    <a href=""></a>
+
+<button onclick="contarEnlaces()">Contar enlaces</button>
+<button onclick="penultimoEnlace()">PENULTIMO ENLACE</button>
+
+    <script>
+        function contarEnlaces(){
+    var a = document.getElementsByTagName("a");
+    alert("Hay " + a.length + "enlaces! ");
+    }
+
+    function penultimoEnlace() {
+    var a = document.getElementsByTagName("a");
+    var penultimo = a [a.length - 2]; // Obtiene el penúltimo enlace
+    alert(penultimo.href);
+
+}
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">escribe un numero</label>
+        <input type="text" name="num1" onkeypress="return validadNumero(event)">
+
+        <label for="">escribe otro numero</label>
+        <input type="text" name="num2" onkeypress="return validadNumero(event)">
+
+        <input type="submit" name="enviar">
+    </form>
+
+
+    <script>
+
+function  validadNumero(event) {
+            var tecla = event.keyCode || event.charCode;
+            // Código ASCII de 0 a 9 es 48-57, permite también la tecla de retroceso (backspace)
+            if ((tecla >= 48 && tecla <= 57) || tecla === 8) {
+                return true; // Permite la entrada
+            } else {
+                return false; // Bloquea la entrada
+            }
+        }
+
+    </script>
+</body>
+</html>

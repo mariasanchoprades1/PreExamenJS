@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <p id="miparrafo" class="cambiar-tamano" onmouseover="aumentarTamano(this)" onmouseout="restablecerTamano(this)">
+        Al pasar el ratón por encima de este texto cambiara el tamaño del texto
+    </p>
+
+    <!--CONSTRUIR Y LLAMAR AL EVENTO
+
+    <script>
+        function efectoHover(){
+            let parrafo = document.getElementById("miparrafo");
+
+            parrafo.addEventListener('mouseover', function(){
+                parrafo.style.fontSize='24pt';
+            })
+
+            parrafo.addEventListener('mouseout', function(){
+                parrafo.style.fontSize='12pt';
+            })
+        }
+  efectoHover()
+    </script>
+
+    -->
+<!--ES LO MISMO QUE ARRIBA PERO CON THIS
+    <script>
+
+        // Función para aumentar el tamaño del texto
+        function aumentarTamano(elemento) {
+            elemento.style.fontSize = '16pt';
+        }
+
+        // Función para restablecer el tamaño del texto
+        function restablecerTamano(elemento) {
+            elemento.style.fontSize = '12pt';
+        }
+    </script>
+    -->
+
+    <!--CAMBIO ESTILOS OBJETO EVENT 
+    <script>
+
+        var texto = document.getElementById("miparrafo");
+        
+        //Asigna manejadores de eventos al párrafo
+        
+        texto.addEventListener("mouseover", manejarEvento);
+        texto.addEventListener("mouseout", manejarEvento);
+
+        
+        function manejarEvento(e) {
+            if (e.type === "mouseover") {
+                this.style.fontSize = "24pt";
+            } else if (e.type === "mouseout") {
+                this.style.fontSize = "12pt";
+            }
+        }
+    </script>
+    -->
+
+    <!--attachEvent y con addEventListener  para Internet Explorer y para el resto de navegadores.-->
+<script>
+    
+        var texto = document.getElementById("miparrafo");
+    
+        function manejarEvento(e) {
+            e = e || window.event; // Para la compatibilidad con IE 
+            var tipoEvento = e.type;
+    
+            if (tipoEvento === "mouseover" || tipoEvento === "onmouseover") {
+                texto.style.fontSize = "24pt";
+            } else if (tipoEvento === "mouseout" || tipoEvento === "onmouseout") {
+                texto.style.fontSize = "12pt";
+            }
+        }
+    
+        // comprobar  compatibilidad
+        if (texto.addEventListener) {
+            // Para navegadores modernos
+            texto.addEventListener("mouseover", manejarEvento, false);
+            texto.addEventListener("mouseout", manejarEvento, false);
+        } else if (texto.attachEvent) {
+           //  internet Explorer
+            texto.attachEvent("onmouseover", manejarEvento);
+            texto.attachEvent("onmouseout", manejarEvento);
+        }
+</script>
+
+</body>
+</html>

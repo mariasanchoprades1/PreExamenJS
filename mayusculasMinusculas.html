@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+<script>
+    let cadenaTexto = prompt("Introduce una cadena de texto: ");
+    let cadenaMayus = cadenaTexto.toUpperCase();
+    let cadenaMinus = cadenaTexto.toLocaleUpperCase();
+
+    if (cadenaTexto===cadenaMayus){
+        document.write("Has escrito en mayuscula: ");
+    } else if (cadenaTexto=== cadenaMinus){
+        document.write("Has escrito minúsculas: ");
+    }else {
+        document.write("Son mixtas")
+    }
+</script>
+
+</body>
+</html>
+
+
+<!--
+   
+    <script>
+
+let array = ["HELLO", "WORLD", "JAVASCRIPT"];
+
+let allUppercase = array.every(function(element) {
+    return element === element.toUpperCase();
+});
+
+console.log(allUppercase); // Esto imprimirá 'true' si todos los elementos están en mayúsculas, 'false' en caso contrario
+
+
+    </script>
+
+-->

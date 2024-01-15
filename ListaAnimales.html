@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animales</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <ul id="lista">
+            <li id="leon">Leon🦁</li>
+            <li id="pantera">Pantera🐈</li>
+            <li id="jirafa">Jirafa🦒</li>
+        </ul>
+    </div>
+    <button id="mi-boton1" onclick="añadirAnimal()">Añadir animal</button>
+    <button id="mi-boton2" onclick="insertarNuevoAnimal()">Insertar nuevo animal</button>
+    <button id="mi-boton3" onclick="reemplazarAnimal()">Reemplazar animal</button>
+    <button id="mi-boton1" onclick="borrarAnimal()">Borrar animal</button>
+    <button id="mi-boton1" onclick="clonarListaCompleta()">Clonar lista completa</button>
+    <button id="mi-boton1" onclick="CrearSublistaLeon()">Sublista Leon🦁 funciones Dom</button>
+    <button id="mi-boton1" onclick="CrearSublistaAlter()">Sublista Leon🦁 innerHTML</button>
+
+    <script>
+        function añadirAnimal() {
+            /*var li = document.createElement("li");
+            li.textContent = "Gato";
+            document.getElementById("container").appendChild(li);*/
+            var li = document.createElement("li");
+            li.textContent = "Gato";
+            document.getElementById("container").getElementsByTagName("ul")[0].appendChild(li);
+        }
+
+
+function insertarNuevoAnimal() {
+    var li = document.createElement("li");
+    li.textContent = "Delfín🐬";
+    var ul = document.getElementById("container").getElementsByTagName("ul")[0];
+    ul.insertBefore(li, ul.children[1]);
+}
+
+function reemplazarAnimal(){
+    var li  = document.createElement("li");
+    li.textContent   = "ahora es el flamenco 🦩"; 
+    var ul = document.getElementById("container").getElementsByTagName("ul")[0];
+    var oldli = ul.lastChild;
+    ul.replaceChild(li, oldli);
+            
+}
+
+function borrarAnimal() {
+    // Obtén la referencia al elemento <ul> por su ID
+    var ul = document.getElementById("lista");
+
+    // Verifica si la lista tiene al menos un elemento <li>
+    if (ul.children.length > 0) {
+        // Obtiene el último elemento <li> de la lista
+        var oldli = ul.lastChild;
+
+        // Elimina el último elemento <li> de la lista
+        ul.removeChild(oldli);
+    }
+}
+
+
+function clonarListaCompleta(){
+
+        var container = document.getElementById("container");
+        var clon = container.cloneNode(true);
+        document.body.appendChild(clon);
+     }
+
+    
+function CrearSublistaLeon(){
+
+var lista = document.getElementById("lista");
+var clon = lista.cloneNode(true)
+leon.appendChild(clon);
+ }
+
+
+function CrearSublistaAlter(){
+var leon = document.getElementById("leon");
+leon.innerHTML += "<ul><li> Leon con INNERHTML </li></ul>";
+
+}
+
+
+    </script>
+</body>
+
+</html>
